@@ -7,13 +7,14 @@ const ScNavItem = styled.li`
     border-style: solid;
     border-width: 2px;
     padding-bottom: 30px;
+    cursor: pointer;
 `;
 
 
 class NavItem extends Component {
     render() {
         return (
-            <ScNavItem>
+            <ScNavItem onClick={() => this.props.updateView(this.props.name)}>
                 NavItem: {this.props.name}
             </ScNavItem>
         );

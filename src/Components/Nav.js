@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import NavItem from "./Nav/NavItem";
 
+import VIEWSTATES from '../Common/viewStates';
 
 const ScNav = styled.div`
     float: left;
@@ -25,9 +26,9 @@ class Nav extends Component {
             <ScNav>
                Nav
                 <ScNavTop>
-                    <NavItem name={'Profile'}/>
-                    <NavItem name={'Peeps'}/>
-                    <NavItem name={'Meals'}/>
+                    <NavItem name={VIEWSTATES.PROFILE} updateView={this.props.updateView} />
+                    <NavItem name={VIEWSTATES.PEEPS} updateView={this.props.updateView} />
+                    <NavItem name={VIEWSTATES.MEALS} updateView={this.props.updateView} />
                 </ScNavTop>
             </ScNav>
         );
