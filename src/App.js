@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import styled from 'styled-components';
 
-import Nav from "./Nav";
-import Header from "./Header";
-import View from "./View";
+import Nav from "./Components/Nav";
+import Header from "./Components/Header";
+import View from "./Components/View";
 
 const ScApp = styled.div`
     text-align: center;

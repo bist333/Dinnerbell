@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import styled from 'styled-components';
+import MealTimer from "./Header/MealTimer";
 
 const ScHeader = styled.div`
     position: static;
@@ -15,9 +15,8 @@ class Header extends Component {
     render() {
         return (
             <ScHeader>
-                <header>
-                    header
-                </header>
+                heasder
+                <MealTimer time={300}/>
             </ScHeader>
         );
     }

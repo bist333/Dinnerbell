@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import styled from 'styled-components';
+import NavItem from "./Nav/NavItem";
+
 
 const ScNav = styled.div`
     float: left;
@@ -11,12 +12,23 @@ const ScNav = styled.div`
     height: 100vh;
     width: 20%;
 `;
+const ScNavTop = styled.ul`
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+`;
 
 class Nav extends Component {
     render() {
         return (
             <ScNav>
                Nav
+                <ScNavTop>
+                    <NavItem name={'Profile'}/>
+                    <NavItem name={'Peeps'}/>
+                    <NavItem name={'Meals'}/>
+                </ScNavTop>
             </ScNav>
         );
     }

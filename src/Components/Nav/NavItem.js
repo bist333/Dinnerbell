@@ -1,0 +1,23 @@
+import React, { Component } from 'react';
+import styled from 'styled-components';
+
+
+const ScNavItem = styled.li`
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    padding-bottom: 30px;
+`;
+
+
+class NavItem extends Component {
+    render() {
+        return (
+            <ScNavItem>
+                NavItem: {this.props.name}
+            </ScNavItem>
+        );
+    }
+}
+
+export default NavItem;
