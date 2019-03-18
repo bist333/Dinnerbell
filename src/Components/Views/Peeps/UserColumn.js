@@ -40,8 +40,8 @@ class UserColumn extends Component {
     }
 
     getGroups() {
-        let group1 = {name: 'The Boys', members: [this.state.friends[0].name, this.state.friends[1].name]};
-        let group2 = {name: 'With James', members: [this.state.friends[0].name, this.state.friends[1].name, this.state.friends[2].name]};
+        let group1 = {name: 'The Boys', members: ['Jim', 'John']};
+        let group2 = {name: 'With James', members: ['Jim', 'John', 'James']};
         return [group1, group2];
     }
 

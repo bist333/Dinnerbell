@@ -28,7 +28,8 @@ class Group extends Component {
                 <ScProfilePicture src={logo} alt={"profile"}/>
                 <ScGroupInfo>
                     {this.props.group.name}
-                    {this.props.group.members}
+                    <br />
+                    {this.props.group.members.map(group => <span> {group}, </span>)}
                 </ScGroupInfo>
             </ScGroup>
         );
