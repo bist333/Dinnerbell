@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import logo from '../../../logo.svg'
 
-const ScFriend = styled.div`
+const ScGroup = styled.div`
     height: 40px;
     text-align: center;
     font-size: 14px;
@@ -15,21 +15,24 @@ const ScProfilePicture = styled.img`
     height: 100%;
 `;
 
-const ScUserInfo = styled.span`
+const ScGroupInfo = styled.span`
     margin: auto 0px;
 `;
 
 
-class Friend extends Component {
+class Group extends Component {
 
     render() {
         return (
-            <ScFriend>
+            <ScGroup>
                 <ScProfilePicture src={logo} alt={"profile"}/>
-                <ScUserInfo>{this.props.friend.name}</ScUserInfo>
-            </ScFriend>
+                <ScGroupInfo>
+                    {this.props.group.name}
+                    {this.props.group.members}
+                </ScGroupInfo>
+            </ScGroup>
         );
     }
 }
 
-export default Friend;
+export default Group;
