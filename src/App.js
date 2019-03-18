@@ -7,6 +7,12 @@ import View from "./Components/View";
 
 import VIEWSTATES from './Common/viewStates';
 
+import Cookies from 'universal-cookie';
+import persistent_data from './persist.json';
+
+const cookies = new Cookies();
+cookies.set('persisted_data', JSON.stringify(persistent_data));
+
 const ScApp = styled.div`
     text-align: center;
 `;
