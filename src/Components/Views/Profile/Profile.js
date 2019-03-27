@@ -3,12 +3,18 @@ import styled from 'styled-components';
 
 
 const ScProfile = styled.div`
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 24px;
+    
+    margin: auto;
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-left: 25%;
+    margin-top: 4%;
 `;
 
 const ScProForm = styled.form`
@@ -18,20 +24,23 @@ const ScProForm = styled.form`
     width: 100%;
     margin-left: 25%;
     margin-top: 4%;
+    font-size: 18pt;
 `;
 
 const ScProField = styled.input`
     display: block;
-    padding: 2%;
-    margin-top: 2%;
-    margin-bot: 2%;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bot: 20px;
+    font-size: 18pt;
 `;
 
 const ScProSubmitButton = styled.button`
     display: block;
-    padding: 2%;
-    margin-top: 2%;
-    margin-bot: 2%;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bot: 20px;
+    font-size: 18pt;
 `;
 
 class Profile extends Component {
@@ -74,8 +83,13 @@ class Profile extends Component {
     }
 
     //Handle Submission of the user data form
-    handleEdit = e => {
+    handleSave = e => {
         this.setState({ blank: false });
+    }
+
+    //Handle Clicking of edit button
+    handleEdit = e => {
+        this.setState({blank:true});
     }
 
     render() {
@@ -89,16 +103,18 @@ class Profile extends Component {
                         <ScProField type="text" name="favFood" placeholder="Favorite Foods" value={this.state.favFood} onChange={this.handleFavFoodChange}/>
                         <ScProField type="text" name="nfavFood" placeholder="Hated Foods" value={this.state.nfavFood} onChange={this.handleNFavFoodChange}/>
                         <ScProField type="text" name="favRest" placeholder="Favorite Restauranut" value={this.state.favRest} onChange={this.handleRestChange}/>
-                        <ScProSubmitButton type="button" onClick={this.handleSearch}>Save</ScProSubmitButton>
+                        <ScProSubmitButton type="button" onClick={this.handleSave}>Save</ScProSubmitButton>
                     </ScProForm>
                 </div>
-                
             );
         }
         else{
             //If user data exists render it with option to edit, editing will set blank to true
             return (
-                <p>oof</p>
+                <div>
+                    <p>oof</p>
+                    <button type = "button" onClick={this.handleEdit}>Edit</button>
+                </div>
             );
         }
     }
