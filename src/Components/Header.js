@@ -15,8 +15,8 @@ class Header extends Component {
     render() {
         return (
             <ScHeader>
-                heasder
-                <MealTimer time={300}/>
+                header
+                <MealTimer time={this.props.time}/>
             </ScHeader>
         );
     }
