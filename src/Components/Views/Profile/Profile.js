@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Cookies from 'universal-cookie';
 
+//Inits cookies
+const cookies = new Cookies();
 
 const ScProfile = styled.div`
     display: flex;
@@ -76,44 +79,33 @@ class Profile extends Component {
 
         super(props)
         this.state = {
-            name: '',
-            allergy: '',
-            favFood: '',
-            nfavFood: '',
-            favRest: '',
-            blank: true,
-            usernameCheck : false,
+            blank: false,
         }
     }
 
     //Handle Change of User's Name
     handleNameChange = e => {
-        this.setState({ name: e.target.value});
+        cookies.set('username', e.target.value);
     }
 
     //Handle Change of User's Allergy
     handleAllergyChange = e => {
-        this.setState({ allergy: e.target.value });
+        cookies.set('allergy', e.target.value);
     }
 
     //Handle Change of User's Favorite Foods
     handleFavFoodChange = e => {
-        this.setState({ favFood: e.target.value });
+        cookies.set('favFood', e.target.value);
     }
 
     //Handle Change of User's Least Favorite Foods
     handleNFavFoodChange = e => {
-        this.setState({ nfavFood: e.target.value });
+        cookies.set('nfavFood', e.target.value);
     }
 
     //Handle Change of User's Favorite Restauraunt
     handleRestChange = e => {
-        this.setState({ favRest: e.target.value });
-    }
-
-    //Handle Submission of the inital user data form
-    handleInitSave = e => {
-        this.setState({ blank: false, usernameCheck: true })
+        cookies.set('favRest', e.target.value);
     }
 
     //Handle Submission of the user data form
@@ -128,46 +120,29 @@ class Profile extends Component {
 
     render() {
         if(this.state.blank == true){
-            if(this.state.usernameCheck == false){
                 //If no user data exists, render form to be submitted
                 return (
                     <div>
                         <ScProForm>
-                            <ScProField type="text" name="name" placeholder="Username" value={this.state.symbol} onChange={this.handleNameChange}/>
-                            <ScProField type="text" name="allergy" placeholder="Allergies" value={this.state.allergy} onChange={this.handleAllergyChange}/>
-                            <ScProField type="text" name="favFood" placeholder="Favorite Foods" value={this.state.favFood} onChange={this.handleFavFoodChange}/>
-                            <ScProField type="text" name="nfavFood" placeholder="Hated Foods" value={this.state.nfavFood} onChange={this.handleNFavFoodChange}/>
-                            <ScProField type="text" name="favRest" placeholder="Favorite Restauranut" value={this.state.favRest} onChange={this.handleRestChange}/>
-                            <ScProSubmitButton type="button" onClick={this.handleInitSave}>Save</ScProSubmitButton>
-                        </ScProForm>
-                    </div>
-                );
-            }
-            else{
-                //If no user data exists, render form to be submitted
-                return (
-                    <div>
-                        <ScProForm>
-                            <ScProInfoField>Username: {this.state.name}</ScProInfoField>
-                            <ScProField type="text" name="allergy" placeholder="Allergies" value={this.state.allergy} onChange={this.handleAllergyChange}/>
-                            <ScProField type="text" name="favFood" placeholder="Favorite Foods" value={this.state.favFood} onChange={this.handleFavFoodChange}/>
-                            <ScProField type="text" name="nfavFood" placeholder="Hated Foods" value={this.state.nfavFood} onChange={this.handleNFavFoodChange}/>
-                            <ScProField type="text" name="favRest" placeholder="Favorite Restauranut" value={this.state.favRest} onChange={this.handleRestChange}/>
+                            <ScProInfoField>Username: {cookies.get('username')}</ScProInfoField>
+                            <ScProField type="text" name="allergy" placeholder="Allergies" value={cookies.get('allergy')} onChange={this.handleAllergyChange}/>
+                            <ScProField type="text" name="favFood" placeholder="Favorite Foods" value={cookies.get('favFood')} onChange={this.handleFavFoodChange}/>
+                            <ScProField type="text" name="nfavFood" placeholder="Hated Foods" value={cookies.get('nfavFood')} onChange={this.handleNFavFoodChange}/>
+                            <ScProField type="text" name="favRest" placeholder="Favorite Restauranut" value={cookies.get('favRest')} onChange={this.handleRestChange}/>
                             <ScProSubmitButton type="button" onClick={this.handleSave}>Save</ScProSubmitButton>
                         </ScProForm>
                     </div>
                 );
-            }
         }
         else{
             //If user data exists render it with option to edit, editing will set blank to true
             return (
                 <ScProInfo>
-                    <ScProInfoField>Username: {this.state.name}</ScProInfoField>
-                    <ScProInfoField>Allergies: {this.state.allergy}</ScProInfoField>
-                    <ScProInfoField>Favorite Foods: {this.state.favFood}</ScProInfoField>
-                    <ScProInfoField>Disliked Foods: {this.state.nfavFood}</ScProInfoField>
-                    <ScProInfoField>Favorite Restauranut: {this.state.favRest}</ScProInfoField>
+                    <ScProInfoField>Username: {cookies.get('username')}</ScProInfoField>
+                    <ScProInfoField>Allergies: {cookies.get('allergy')}</ScProInfoField>
+                    <ScProInfoField>Favorite Foods: {cookies.get('favFood')}</ScProInfoField>
+                    <ScProInfoField>Disliked Foods: {cookies.get('nfavFood')}</ScProInfoField>
+                    <ScProInfoField>Favorite Restauranut: {cookies.get('favRest')}</ScProInfoField>
                     <ScProEditButton type = "button" onClick={this.handleEdit}>Edit</ScProEditButton>
                 </ScProInfo>
             );
