@@ -14,6 +14,18 @@ const ScUserColumn = styled.div`
     border-width: 1px;
 `;
 
+const ScTitle = styled.h4`
+    border-bottom: 1px solid;
+    margin: 12px 0;
+    padding-bottom: 4px;
+`;
+
+const ScBottomBox = styled.span`
+    margin-top: auto;
+    padding-bottom: 4px;
+    border-top: 1px solid;
+`;
+
 
 class UserColumn extends Component {
 
@@ -24,6 +36,7 @@ class UserColumn extends Component {
 
     componentWillMount(){
             this.renderFriends();
+            console.log(this.props.bottomonclick);
     }
 
     componentDidMount(){
@@ -46,12 +59,17 @@ class UserColumn extends Component {
     }
 
     renderFriends() {
-        let friends = this.getFriends();
-        let elements = [];
-        friends.forEach(friend => {
-            elements.push(<Friend friend={friend}/>);
-        });
+        if (this.props.friends) {
+            this.setState({friends: this.props.friends})
+        }
+        else {
+            let friends = this.getFriends();
+            let elements = [];
+            friends.forEach(friend => {
+                elements.push(<Friend friend={friend}/>);
+            });
             this.setState({friends: elements})
+        }
     }
 
     renderGroups() {
@@ -66,9 +84,10 @@ class UserColumn extends Component {
     render() {
         return (
             <ScUserColumn>
+                <ScTitle>{this.props.title}</ScTitle>
                 {this.props.id === 'friends' ? this.state.friends.map(friend => <div> {friend} </div>) : ''}
-                {this.state.groups.map(group => <div> {group} </div>)}
-
+                {this.props.id === 'groups' ? this.state.groups.map(group => <div> {group} </div>) : ''}
+                <ScBottomBox onClick={this.props.bottomonclick ? () => this.props.bottomonclick() : false}>{this.props.bottom}</ScBottomBox>
             </ScUserColumn>
         );
     }
