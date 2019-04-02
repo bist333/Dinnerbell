@@ -7,71 +7,15 @@ const cookies = new Cookies();
 
 const ScProfile = styled.div`
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     font-size: 24px;
     
     margin: auto;
-    display: block;
     text-align: center;
-    width: 100%;
-    margin-left: 25%;
+    justify-content: center;
     margin-top: 4%;
 `;
 
-//Styling for the profile elements
-const ScProInfo = styled.div`
-    margin: auto;
-    display: block;
-    text-align: center;
-    width: 100%;
-    margin-left: 25%;
-    margin-top: 4%;
-    font-size: 18pt;
-`;
-
-const ScProInfoField = styled.p`
-    display: block;
-    padding: 5px;
-    margin-top: 20px;
-    margin-bot: 20px;
-    font-size: 18pt;
-`;
-
-const ScProEditButton = styled.button`
-    display: block;
-    padding: 5px;
-    margin-top: 20px;
-    margin-bot: 20px;
-    font-size: 18pt;
-`;
-
-//Styling for the form elements
-const ScProForm = styled.form`
-    margin: auto;
-    display: block;
-    text-align: center;
-    width: 100%;
-    margin-left: 25%;
-    margin-top: 4%;
-    font-size: 18pt;
-`;
-
-const ScProField = styled.input`
-    display: block;
-    padding: 5px;
-    margin-top: 20px;
-    margin-bot: 20px;
-    font-size: 18pt;
-`;
-
-const ScProSubmitButton = styled.button`
-    display: block;
-    padding: 5px;
-    margin-top: 20px;
-    margin-bot: 20px;
-    font-size: 18pt;
+const ScInput = styled.input`
 `;
 
 class Profile extends Component {
@@ -110,7 +54,7 @@ class Profile extends Component {
 
     //Handle Submission of the user data form
     handleSave = e => {
-        this.setState({ blank: false });
+        this.setState({blank:false});
     }
 
     //Handle Clicking of edit button
@@ -122,29 +66,33 @@ class Profile extends Component {
         if(this.state.blank == true){
             //If user clicks "edit" render form to change info
             return (
-                <div>
-                    <ScProForm>
-                        <ScProInfoField>Username: {cookies.get('username')}</ScProInfoField>
-                        <ScProField type="text" name="allergy" placeholder="Allergies" onChange={this.handleAllergyChange}/>
-                        <ScProField type="text" name="favFood" placeholder="Favorite Foods" onChange={this.handleFavFoodChange}/>
-                        <ScProField type="text" name="nfavFood" placeholder="Hated Foods" onChange={this.handleNFavFoodChange}/>
-                        <ScProField type="text" name="favRest" placeholder="Favorite Restauranut" onChange={this.handleRestChange}/>
-                        <ScProSubmitButton type="button" onClick={this.handleSave}>Save</ScProSubmitButton>
-                    </ScProForm>
-                </div>
+                <ScProfile>
+                    <form>
+                        <img src={require('./placeholder.jpg')} width="30%" height="auto" />
+                        <p>Username: {cookies.get('username')}</p>
+                        <ScInput type="text" name="allergy" placeholder="Allergies" onChange={this.handleAllergyChange}/>
+                        <ScInput type="text" name="favFood" placeholder="Favorite Foods" onChange={this.handleFavFoodChange}/>
+                        <ScInput type="text" name="nfavFood" placeholder="Hated Foods" onChange={this.handleNFavFoodChange}/>
+                        <ScInput type="text" name="favRest" placeholder="Favorite Restauranut" onChange={this.handleRestChange}/>
+                        <button type="button" onClick={this.handleSave}>Save</button>
+                    </form>
+                </ScProfile>
             );
         }
         else{
             //If user data exists render it with option to edit, editing will set blank to true
             return (
-                <ScProInfo>
-                    <ScProInfoField>Username: {cookies.get('username')}</ScProInfoField>
-                    <ScProInfoField>Allergies: {cookies.get('allergy')}</ScProInfoField>
-                    <ScProInfoField>Favorite Foods: {cookies.get('favFood')}</ScProInfoField>
-                    <ScProInfoField>Disliked Foods: {cookies.get('nfavFood')}</ScProInfoField>
-                    <ScProInfoField>Favorite Restauranut: {cookies.get('favRest')}</ScProInfoField>
-                    <ScProEditButton type = "button" onClick={this.handleEdit}>Edit</ScProEditButton>
-                </ScProInfo>
+                <ScProfile>
+                    <div>
+                        <img src={require('./placeholder.jpg')} width="30%" height="auto" />
+                        <p>Username: {cookies.get('username')}</p>
+                        <p>Allergies: {cookies.get('allergy')}</p>
+                        <p>Favorite Foods: {cookies.get('favFood')}</p>
+                        <p>Disliked Foods: {cookies.get('nfavFood')}</p>
+                        <p>Favorite Restauranut: {cookies.get('favRest')}</p>
+                        <button type = "button" onClick={this.handleEdit}>Edit</button>
+                    </div>
+                </ScProfile>    
             );
         }
     }
