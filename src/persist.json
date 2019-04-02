@@ -1,0 +1,10 @@
+{
+  "some_key": "some_value",
+  "array": [
+    1,
+    "two"
+  ],
+  "obj": {
+    "one": "two"
+  }
+}
