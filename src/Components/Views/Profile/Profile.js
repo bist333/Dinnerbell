@@ -120,19 +120,19 @@ class Profile extends Component {
 
     render() {
         if(this.state.blank == true){
-                //If no user data exists, render form to be submitted
-                return (
-                    <div>
-                        <ScProForm>
-                            <ScProInfoField>Username: {cookies.get('username')}</ScProInfoField>
-                            <ScProField type="text" name="allergy" placeholder="Allergies" value={cookies.get('allergy')} onChange={this.handleAllergyChange}/>
-                            <ScProField type="text" name="favFood" placeholder="Favorite Foods" value={cookies.get('favFood')} onChange={this.handleFavFoodChange}/>
-                            <ScProField type="text" name="nfavFood" placeholder="Hated Foods" value={cookies.get('nfavFood')} onChange={this.handleNFavFoodChange}/>
-                            <ScProField type="text" name="favRest" placeholder="Favorite Restauranut" value={cookies.get('favRest')} onChange={this.handleRestChange}/>
-                            <ScProSubmitButton type="button" onClick={this.handleSave}>Save</ScProSubmitButton>
-                        </ScProForm>
-                    </div>
-                );
+            //If user clicks "edit" render form to change info
+            return (
+                <div>
+                    <ScProForm>
+                        <ScProInfoField>Username: {cookies.get('username')}</ScProInfoField>
+                        <ScProField type="text" name="allergy" placeholder="Allergies" onChange={this.handleAllergyChange}/>
+                        <ScProField type="text" name="favFood" placeholder="Favorite Foods" onChange={this.handleFavFoodChange}/>
+                        <ScProField type="text" name="nfavFood" placeholder="Hated Foods" onChange={this.handleNFavFoodChange}/>
+                        <ScProField type="text" name="favRest" placeholder="Favorite Restauranut" onChange={this.handleRestChange}/>
+                        <ScProSubmitButton type="button" onClick={this.handleSave}>Save</ScProSubmitButton>
+                    </ScProForm>
+                </div>
+            );
         }
         else{
             //If user data exists render it with option to edit, editing will set blank to true
