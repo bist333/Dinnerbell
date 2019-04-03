@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import {ScStartMeal, ScMealType} from './StartMeal.js';
+import {ScStartMeal, ScMealType} from './Shared';
 
 
 class StartMeal extends Component {

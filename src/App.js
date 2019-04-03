@@ -52,7 +52,7 @@ class App extends Component {
             <ScApp>
                 <Nav updateView={this.updateView} />
                 <Header time={1553432663} />
-                <View viewState={this.state.viewState} flavor={this.state.flavor}/>
+                <View viewState={this.state.viewState} flavor={this.state.flavor} updateView={this.updateView}/>
             </ScApp>
         );
     }

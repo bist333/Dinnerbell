@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import ScStartMeal from './Shared.js'
-import ScMealType from './Shared.js'
+import {ScStartMeal, ScMealType} from '../Shared.js'
 
 
 const ScHomeCooked = styled.div`

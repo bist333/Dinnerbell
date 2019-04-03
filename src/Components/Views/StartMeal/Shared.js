@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 
-const ScStartMeal = styled.div`
+export const ScStartMeal = styled.div`
     text-align: -webkit-center;
     font-size: 24px;
     display: flex;
@@ -10,7 +10,7 @@ const ScStartMeal = styled.div`
     justify-content: center;
 `;
 
-const ScMealType = styled.div`
+export const ScMealType = styled.div`
     border: 1px solid;
     padding: 10px;
     width: 50%;
@@ -20,5 +20,3 @@ const ScMealType = styled.div`
     background-color: #950020;
     }
 `;
-
-export default {ScStartMeal, ScMealType};

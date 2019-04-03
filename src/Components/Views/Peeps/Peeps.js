@@ -4,6 +4,7 @@ import UserColumn from "./UserColumn";
 import AddFriend from "./AddFriend";
 import NewGroup from "./NewGroup";
 import PEEPSTATES from "../../../Common/peepsStates";
+import VIEWSTATES from "../../../Common/viewStates";
 
 const ScHeaderComtainer = styled.div`
     display: flex;
@@ -74,7 +75,7 @@ class Peeps extends Component {
                 this.setState({renderedView:
                     <React.Fragment>
                         <ScGroupMenu>
-                            <ScButton>Start A Meal</ScButton>
+                            <ScButton onClick={() => this.props.updateView(VIEWSTATES.STARTMEAL)}>Start A Meal</ScButton>
                             <ScButton>Edit Group</ScButton>
                             <ScButton>Leave Group</ScButton>
                         </ScGroupMenu>
