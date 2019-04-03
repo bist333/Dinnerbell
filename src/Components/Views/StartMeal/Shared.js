@@ -28,7 +28,6 @@ export const ScMealType = styled.div`
     width: 25%;
     height 30px;
     border-style: solid;
-    border-color: 2px;
     cursor: pointer;
     background-color: #EF476F;
     font-size: 18px;

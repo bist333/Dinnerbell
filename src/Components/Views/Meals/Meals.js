@@ -14,6 +14,9 @@ const ScMeals = styled.div`
 `;
 
 const ScMealBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     margin-top: 2px;
     margin-bottom: 10px;
@@ -21,7 +24,7 @@ const ScMealBox = styled.div`
     padding: 1%;
     width: 40%;
     color: #000000B5;
-    height 100px;
+    height auto;
     cursor: pointer;
     background-color: #F0F0F0;
     font-size: 18px;
@@ -31,14 +34,25 @@ const ScMealBox = styled.div`
 
 const ScButton = styled.button`
     background-color: ${props => props.color};
-    width: 30%;
-    height: 30%;
+    width: auto;
+    height: auto;
+    
+    padding: 5%;
     
     font-size: 18px;
     font-weight: bold;
     color: #00000085;
     border-style: solid;
     border-radius: 10px;
+`;
+
+const ScButtonArray = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    width: auto;
+    justify-content: center;
 `;
 
 class Meals extends Component {
@@ -54,18 +68,20 @@ class Meals extends Component {
             <ScMeals>
                 {this.state.pendingMeals.map(meal => (
                     <ScMealBox>
-                        {meal.meal}<br />
-                        {meal.type}<br />
-                        {MealTimer.timeUntil(meal.time)}<br />
-                        <ScButton color={"#4CAF50"}>
-                            Accept
-                        </ScButton>
-                        <ScButton color={"#5F5F5F"}>
-                            Change
-                        </ScButton>
-                        <ScButton color={"#E24329"}>
-                            Decline
-                        </ScButton>
+                        <div>{meal.meal}</div>
+                        <div>{meal.type}</div>
+                        <div>{meal.time}</div>
+                        <ScButtonArray>
+                            <ScButton color={"#4CAF50"}>
+                                Accept
+                            </ScButton>
+                            <ScButton color={"#5F5F5F"}>
+                                Change
+                            </ScButton>
+                            <ScButton color={"#E24329"}>
+                                Decline
+                            </ScButton>
+                        </ScButtonArray>
                     </ScMealBox>
                 ))}
             </ScMeals>
