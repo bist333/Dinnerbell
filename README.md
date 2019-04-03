@@ -1,8 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-##Project Desription
+## Project Desription
+Dinnerbell is a prototype of a system designed to aid users in the scheduling, planning and coordination of group meals. Dinnerbell supports takeout, homecooked, and restauraunt meals.
 
-##Running the Project
+Dinnerbell was developed using React JS and Node Package Manager.
+
+## Running the Project
 To run the prototype locally:
 
 1. Download the project files to a new directory
