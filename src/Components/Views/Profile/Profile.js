@@ -19,6 +19,11 @@ const ScProfile = styled.div`
 const ScInput = styled.input`
 `;
 
+const ScButton = styled.button`
+    background-color: #EF476F;
+    border: none;
+`;
+
 class Profile extends Component {
     constructor(props){
 
@@ -75,7 +80,7 @@ class Profile extends Component {
                         <ScInput type="text" name="favFood" placeholder="Favorite Foods" onChange={this.handleFavFoodChange}/>
                         <ScInput type="text" name="nfavFood" placeholder="Hated Foods" onChange={this.handleNFavFoodChange}/>
                         <ScInput type="text" name="favRest" placeholder="Favorite Restauranut" onChange={this.handleRestChange}/>
-                        <button type="button" onClick={this.handleSave}>Save</button>
+                        <ScButton type="button" onClick={this.handleSave}>Save</ScButton>
                     </form>
                 </ScProfile>
             );
@@ -91,7 +96,7 @@ class Profile extends Component {
                         <p>Favorite Foods: {cookies.get('favFood')}</p>
                         <p>Disliked Foods: {cookies.get('nfavFood')}</p>
                         <p>Favorite Restauranut: {cookies.get('favRest')}</p>
-                        <button type = "button" onClick={this.handleEdit}>Edit</button>
+                        <ScButton type = "button" onClick={this.handleEdit}>Edit</ScButton>
                     </div>
                 </ScProfile>    
             );
