@@ -26,6 +26,13 @@ class App extends Component {
         this.updateView = this.updateView.bind(this);
     }
 
+    componentWillMount(props){
+        cookies.set('username', "Mark");
+        cookies.set('allergy', "Strawberries");
+        cookies.set('favFood', "Calzones");
+        cookies.set('nfavFood', "Cilantro, Radishes");
+        cookies.set('favRest', "Salvatore's")
+    }
 
     updateView(newView, flavor) {
         this.setState({viewState: newView});
