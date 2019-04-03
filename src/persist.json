@@ -1,10 +1,12 @@
 {
   "next_meal_time": 98555987345,
-  "array": [
-    1,
-    "two"
+  "pending_meals": [
+    {"meal": "Salvatore's", "type": "takeout", "time": 98555987345},
+    {"meal": "Pita Pit", "type": "takeout", "time": 98556087345},
+    {"meal": "Rice and Beans", "type": "homecooked", "time": 98555997345}
   ],
-  "obj": {
-    "one": "two"
-  }
+  "pending_payments": [
+    {"meal": "Cheetos", "time": 98554577345},
+    {"meal": "Crackers", "time": 98554577345}
+  ]
 }
