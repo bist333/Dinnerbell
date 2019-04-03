@@ -31,7 +31,9 @@ class UserColumn extends Component {
 
     constructor(props){
         super(props);
-        this.state = {friends: [], groups: []}
+        this.state = {friends: [], groups: []};
+
+        this.unselectOthers = this.unselectOthers.bind(this);
     }
 
     componentWillMount(){
@@ -66,7 +68,10 @@ class UserColumn extends Component {
             let friends = this.getFriends();
             let elements = [];
             friends.forEach(friend => {
-                elements.push(<Friend friend={friend}/>);
+                elements.push(<Friend friend={friend} />);
+                console.log(this.state.selected === friend.name);
+                console.log(this.state.selected);
+                console.log(friend.name);
             });
             this.setState({friends: elements})
         }
@@ -81,11 +86,17 @@ class UserColumn extends Component {
         this.setState({groups: elements})
     }
 
+    unselectOthers(friend){
+        console.log(friend);
+        this.setState({selected: friend}, () => this.renderFriends());
+        console.log('called');
+    }
+
     render() {
         return (
             <ScUserColumn>
                 <ScTitle>{this.props.title}</ScTitle>
-                {this.props.id === 'friends' ? this.state.friends.map(friend => <div> {friend} </div>) : ''}
+                {this.state.friends && this.props.id !== 'groups' && this.state.friends.map(friend => <div> {friend} </div>)}
                 {this.props.id === 'groups' ? this.state.groups.map(group => <div> {group} </div>) : ''}
                 <ScBottomBox onClick={this.props.bottomonclick ? () => this.props.bottomonclick() : false}>{this.props.bottom}</ScBottomBox>
             </ScUserColumn>

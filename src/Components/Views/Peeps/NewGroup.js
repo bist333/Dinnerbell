@@ -11,3 +11,7 @@ class NewGroup extends Component {
 }
 
 export default NewGroup;
+
+
+
+unselectOthers={this.unselectOthers} selected={this.state.selected === friend.name}

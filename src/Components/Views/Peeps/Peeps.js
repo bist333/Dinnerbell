@@ -55,6 +55,10 @@ class Peeps extends Component {
         this.setState({update: true});
     }
 
+    changeToGroupMenu(){
+        
+    }
+
     changeToNormal(){
         this.setState({view: PEEPSTATES.NORMAL});
         this.setState({update: true});

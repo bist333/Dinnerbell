@@ -8,6 +8,8 @@ const ScFriend = styled.div`
     font-size: 14px;
     display: flex;
     padding-bottom: 12px;
+    border: ${props => props.isSelected ? 
+    'border-color: #9ecaed; box-shadow: 0 0 10px #9ecaed;' : ''}
 `;
 
 const ScProfilePicture = styled.img`
@@ -22,9 +24,19 @@ const ScUserInfo = styled.span`
 
 class Friend extends Component {
 
+    constructor(props){
+        super();
+        this.state={isSelected:false}
+    }
+
+    unselectOthers(){
+        this.props.unselectOthers(this.props.friend.name);
+        this.setState({isSelected: true});
+    }
+
     render() {
         return (
-            <ScFriend>
+            <ScFriend isSelected={this.props.selected} onClick={() => this.unselectOthers()}>
                 <ScProfilePicture src={logo} alt={"profile"}/>
                 <ScUserInfo>{this.props.friend.name}</ScUserInfo>
             </ScFriend>
