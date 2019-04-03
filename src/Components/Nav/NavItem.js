@@ -20,7 +20,7 @@ const ScNavItem = styled.li`
 class NavItem extends Component {
     render() {
         return (
-            <ScNavItem onClick={() => this.props.updateView(this.props.viewState)}>
+            <ScNavItem onClick={() => this.props.updateView(this.props.viewState, this.props.flavor)}>
                 {this.props.name}
             </ScNavItem>
         );

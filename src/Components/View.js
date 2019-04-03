@@ -8,6 +8,8 @@ import Profile from './Views/Profile/Profile';
 import Home from './Views/Home/Home';
 
 import VIEWSTATES from '../Common/viewStates';
+import PEEPSSTATES from "../Common/peepsStates";
+import StartMealView from "./Views/StartMeal/StartMealView";
 
 const ScApp = styled.div`
     text-align: center;
@@ -16,17 +18,21 @@ const ScApp = styled.div`
 class View extends Component {
 
     renderView() {
+        console.log('view');
+        console.log(this.props.flavor);
         switch (this.props.viewState) {
             case VIEWSTATES.PAYMENTS:
                 return <Payments/>;
             case VIEWSTATES.MEALS:
                 return <Meals/>;
             case VIEWSTATES.PEEPS:
-                return <Peeps/>;
+                return <Peeps flavor={this.props.flavor} updateView={this.props.updateView}/>;
             case VIEWSTATES.PROFILE:
                 return <Profile/>;
+            case VIEWSTATES.STARTMEAL:
+                return <StartMealView/>;
             default:
-                return <Home/>;
+                return <Home updateView={this.props.updateView}/>;
         }
     }
 

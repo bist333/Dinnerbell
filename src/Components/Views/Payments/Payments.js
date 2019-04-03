@@ -14,16 +14,17 @@ const ScPayments = styled.div`
 
 const ScPaymentBox = styled.ul`
     text-align: center;
-    padding: 10%;
-    width: 25%;
-    border-style: solid;
-    border-color: 2px;
-    padding-bottom: 30px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    box-shadow: 5px 5px #00000044;
+    padding: 1%;
+    width: 40%;
+    color: #000000B5;
+    height 100px;
     cursor: pointer;
-    background-color: #EF476F;
+    background-color: #F0F0F0;
     font-size: 18px;
     font-weight: bold;
-    color: #F8F8FF;
     border-radius: 10px;
 `;
 
@@ -39,7 +40,13 @@ class Payments extends Component {
     render() {
         return (
             <ScPayments>
-                {this.state.pendingPayments.map(meal => <ScPaymentBox><li>{meal.meal}</li><li>{meal.owed}</li><li>{meal.time}</li></ScPaymentBox>)}
+                {this.state.pendingPayments.map(meal => (
+                    <ScPaymentBox>
+                        {meal.meal}<br />
+                        {meal.owed}<br />
+                        {meal.time}
+                    </ScPaymentBox>
+                ))}
             </ScPayments>
         );
     }

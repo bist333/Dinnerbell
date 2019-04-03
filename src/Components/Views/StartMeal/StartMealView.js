@@ -5,8 +5,8 @@ import StartMeal from "./StartMeal";
 import Delivery from './Delivery/Delivery.js';
 import GoOut from './GoOut/GoOut.js';
 import HomeCooked from './HomeCooked/HomeCooked.js';
+import VIEWSTATES from "../../../Common/viewStates";
 
-import VIEWSTATES from '../../../Common/';
 
 const ScApp = styled.div`
     text-align: center;
