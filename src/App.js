@@ -31,11 +31,19 @@ class App extends Component {
         cookies.set('allergy', "Strawberries");
         cookies.set('favFood', "Calzones");
         cookies.set('nfavFood', "Cilantro, Radishes");
-        cookies.set('favRest', "Salvatore's")
+        cookies.set('favRest', "Salvatore's");
+
+        let friend1 = {name: 'Jim'};
+        let friend2 = {name: 'John'};
+        let friend3 = {name: 'James'};
+        let friends= [friend1,friend2,friend3];
+        cookies.set('friends', JSON.stringify(friends) );
     }
 
-    updateView(newView) {
-        this.setState({viewState: newView});
+    updateView(newView, flavor) {
+        console.log(flavor);
+        this.setState({viewState: newView, flavor:flavor});
+        //flavor && this.setState({flavor: flavor})
     }
 
 
@@ -44,7 +52,7 @@ class App extends Component {
             <ScApp>
                 <Nav updateView={this.updateView} />
                 <Header time={1553432663} />
-                <View viewState={this.state.viewState}/>
+                <View viewState={this.state.viewState} flavor={this.state.flavor} updateView={this.updateView}/>
             </ScApp>
         );
     }
