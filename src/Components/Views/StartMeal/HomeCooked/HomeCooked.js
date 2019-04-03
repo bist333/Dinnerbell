@@ -13,7 +13,7 @@ const ScHomeCooked = styled.div`
 class HomeCooked extends Component {
     render() {
         return (
-            <ScStartMeal>
+            <ScHomeCooked>
                 We want a home cooked meal!
             </ScHomeCooked>
         );

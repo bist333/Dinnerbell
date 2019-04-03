@@ -21,5 +21,4 @@ const ScMealType = styled.div`
     }
 `;
 
-export default ScStartMeal;
-export default ScMealType;
+export default {ScStartMeal, ScMealType};
