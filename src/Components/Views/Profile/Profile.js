@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Cookies from 'universal-cookie';
+import Placeholder from './placeholder.jpg'
 
 //Inits cookies
 const cookies = new Cookies();
@@ -63,12 +64,12 @@ class Profile extends Component {
     }
 
     render() {
-        if(this.state.blank == true){
+        if(this.state.blank === true){
             //If user clicks "edit" render form to change info
             return (
                 <ScProfile>
                     <form>
-                        <img src={require('./placeholder.jpg')} width="30%" height="auto" />
+                        <img src={Placeholder} width="30%" height="auto" />
                         <p>Username: {cookies.get('username')}</p>
                         <ScInput type="text" name="allergy" placeholder="Allergies" onChange={this.handleAllergyChange}/>
                         <ScInput type="text" name="favFood" placeholder="Favorite Foods" onChange={this.handleFavFoodChange}/>
@@ -84,7 +85,7 @@ class Profile extends Component {
             return (
                 <ScProfile>
                     <div>
-                        <img src={require('./placeholder.jpg')} width="30%" height="auto" />
+                        <img src={Placeholder} width="30%" height="auto" />
                         <p>Username: {cookies.get('username')}</p>
                         <p>Allergies: {cookies.get('allergy')}</p>
                         <p>Favorite Foods: {cookies.get('favFood')}</p>
