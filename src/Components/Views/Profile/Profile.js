@@ -8,20 +8,47 @@ const cookies = new Cookies();
 
 const ScProfile = styled.div`
     display: flex;
+    flex-direction: column;
     font-size: 24px;
     
     margin: auto;
-    text-align: center;
-    justify-content: center;
     margin-top: 4%;
 `;
 
+const ScEditWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    
+    margin: auto;
+    margin-top: 4%;
+    align-items: center;
+`;
+
 const ScInput = styled.input`
+    border: 2px solid #EF476F;
+    border-radius: 4px;
+    font-size: 18px;
+    width: 33%;
+    margin-top: .5%;
+    margin-bottom: .5%;
+    padding: 10px;
+
 `;
 
 const ScButton = styled.button`
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 33%;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
     background-color: #EF476F;
-    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #F8F8FF;
+    border-radius: 10px;
 `;
 
 class Profile extends Component {
@@ -30,32 +57,42 @@ class Profile extends Component {
         super(props)
         this.state = {
             blank: false,
+            username: cookies.get('username'),
+            allergy: cookies.get('allergy'),
+            favFood: cookies.get('favFood'),
+            nfavFood: cookies.get('nfavFood'),
+            favRest: cookies.get('favRest'),
         }
     }
 
     //Handle Change of User's Name
     handleNameChange = e => {
         cookies.set('username', e.target.value);
+        this.setState({username: e.target.value});
     }
 
     //Handle Change of User's Allergy
     handleAllergyChange = e => {
         cookies.set('allergy', e.target.value);
+        this.setState({allergy: e.target.value});
     }
 
     //Handle Change of User's Favorite Foods
     handleFavFoodChange = e => {
         cookies.set('favFood', e.target.value);
+        this.setState({favFood: e.target.value});
     }
 
     //Handle Change of User's Least Favorite Foods
     handleNFavFoodChange = e => {
         cookies.set('nfavFood', e.target.value);
+        this.setState({nfavFood: e.target.value});
     }
 
     //Handle Change of User's Favorite Restauraunt
     handleRestChange = e => {
         cookies.set('favRest', e.target.value);
+        this.setState({favRest: e.target.value});
     }
 
     //Handle Submission of the user data form
@@ -76,11 +113,13 @@ class Profile extends Component {
                     <form>
                         <img src={Placeholder} width="30%" height="auto" />
                         <p>Username: {cookies.get('username')}</p>
-                        <ScInput type="text" name="allergy" placeholder="Allergies" onChange={this.handleAllergyChange}/>
-                        <ScInput type="text" name="favFood" placeholder="Favorite Foods" onChange={this.handleFavFoodChange}/>
-                        <ScInput type="text" name="nfavFood" placeholder="Hated Foods" onChange={this.handleNFavFoodChange}/>
-                        <ScInput type="text" name="favRest" placeholder="Favorite Restauranut" onChange={this.handleRestChange}/>
-                        <ScButton type="button" onClick={this.handleSave}>Save</ScButton>
+                        <ScEditWrapper>
+                            <ScInput type="text" name="allergy" placeholder="Allergies" value={this.state.allergy} onChange={this.handleAllergyChange}/>
+                            <ScInput type="text" name="favFood" placeholder="Favorite Foods" value={this.state.favFood} onChange={this.handleFavFoodChange}/>
+                            <ScInput type="text" name="nfavFood" placeholder="Hated Foods" value={this.state.nfavFood} onChange={this.handleNFavFoodChange}/>
+                            <ScInput type="text" name="favRest" placeholder="Favorite Restauranut" value={this.state.favRest} onChange={this.handleRestChange}/>
+                        <   ScButton type="button" onClick={this.handleSave}>Save</ScButton>
+                        </ScEditWrapper>
                     </form>
                 </ScProfile>
             );
