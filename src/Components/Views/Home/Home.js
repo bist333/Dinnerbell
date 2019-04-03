@@ -11,16 +11,33 @@ const ScHome = styled.div`
 const ScMealButton = styled.button`
     margin-top: 2%;
     margin-bottom: 2%;
-    width: 50%;
+    width: 33%;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
     background-color: #EF476F;
-    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #F8F8FF;
+    border-radius: 10px;
+`;
+
+const ScNavItem = styled.li`
+    text-align: center;
+    padding: 10%;
+    border-style: solid;
+    border-width: 2px;
+    padding-bottom: 30px;
+    cursor: pointer;
+    background-color: #EF476F;
+    font-size: 18px;
+    font-weight: bold;
+    color: #F8F8FF;
+    border-radius: 10px;
 `;
 
 class Home extends Component {
-    //Handle Clicking of button
-    handleMeal = e => {
-        //Create meal dialogue
-    }
     
     render() {
         return (
