@@ -6,7 +6,7 @@
     {"meal": "Rice and Beans", "type": "homecooked", "time": 98555997345}
   ],
   "pending_payments": [
-    {"meal": "Cheetos", "time": 98554577345},
-    {"meal": "Crackers", "time": 98554577345}
+    {"meal": "Cheetos", "owed": 15.56, "time": 98554577345},
+    {"meal": "Crackers", "owed": 45.32,"time": 98554577345}
   ]
 }
