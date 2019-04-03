@@ -8,12 +8,27 @@ const ScGroup = styled.div`
     font-size: 14px;
     display: flex;
     padding-bottom: 12px;
-    border: ${props => props.isSelected ?
-    'border-color: #9ecaed; box-shadow: 0 0 10px #9ecaed;' : ''}
+`;
+
+const ScGroupBox = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    margin: 5px 10px 10px 5px;
+    box-shadow: 5px 5px #00000044;
+    width: auto;
+    text-align: left;
+    color: #000000B5;
+    height auto;
+    cursor: pointer;
+    background-color: ${props => props.isSelected ? "#EF476F" :"#F0F0F0"};
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
 `;
 
 const ScProfilePicture = styled.img`
-    width: 30%;
+    width: auto;
     height: 100%;
 `;
 
@@ -38,14 +53,16 @@ class Group extends Component {
 
     render() {
         return (
-            <ScGroup isSelected={this.props.selected} onClick={() => this.unselectOthers()}>
-                <ScProfilePicture src={logo} alt={"profile"}/>
-                <ScGroupInfo>
-                    {this.props.group.name}
-                    <br />
-                    {this.props.group.members.map(group => <span> {group}, </span>)}
-                </ScGroupInfo>
-            </ScGroup>
+            <ScGroupBox isSelected={this.props.selected} onClick={() => this.unselectOthers()}>
+                <ScGroup isSelected={this.props.selected} onClick={() => this.unselectOthers()}>
+                    <ScProfilePicture src={logo} alt={"profile"}/>
+                    <ScGroupInfo>
+                        {this.props.group.name}
+                        <br />
+                        {this.props.group.members.map(group => <span> {group}, </span>)}
+                    </ScGroupInfo>
+                </ScGroup>
+            </ScGroupBox>
         );
     }
 }

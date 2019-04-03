@@ -13,22 +13,40 @@ const ScUserColumn = styled.div`
     font-size: 14px;
     display: flex;
     flex-direction: column;
-    border-style: solid;
-    border-width: 1px;
+    border: 2px solid #EF476F;
+    border-radius: 15px;
 `;
 
-const ScTitle = styled.h4`
-    border-bottom: 1px solid;
-    margin: 12px 0;
+const ScTopBox = styled.div`
+    border-radius: 10px 10px 0 0;
+    
+    width: 100%;
+    height: 20px;
+    background-color: #EF476F;
+    
+    font-size: 14px;
+    font-weight: bold;
+    color: #00000085;
+    
     padding-bottom: 4px;
 `;
 
-const ScBottomBox = styled.span`
+const ScBottomBox = styled.div`
+    border-radius: 0 0 10px 10px;
+    
+    width: 100%;
+    height: 20px;
+    background-color: #EF476F;
+    
+    font-size: 14px;
+    font-weight: bold;
+    color: #00000085;
+    
+    cursor: pointer;
+    
     margin-top: auto;
     padding-bottom: 4px;
-    border-top: 1px solid;
 `;
-
 
 class UserColumn extends Component {
 
@@ -90,7 +108,7 @@ class UserColumn extends Component {
     render() {
         return (
             <ScUserColumn>
-                <ScTitle>{this.props.title}</ScTitle>
+                <ScTopBox>{this.props.title}</ScTopBox>
                 {this.state.friends && this.props.id !== 'groups' && this.state.friends.map(friend => <div> {friend} </div>)}
                 {this.props.id === 'groups' ? this.state.groups.map(group => <div> {group} </div>) : ''}
                 <ScBottomBox onClick={this.props.bottomonclick ? () => this.props.bottomonclick() : false}>{this.props.bottom}</ScBottomBox>

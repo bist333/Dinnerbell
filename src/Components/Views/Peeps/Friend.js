@@ -8,12 +8,27 @@ const ScFriend = styled.div`
     font-size: 14px;
     display: flex;
     padding-bottom: 12px;
-    border: ${props => props.isSelected ? 
-    'border-color: #9ecaed; box-shadow: 0 0 10px #9ecaed;' : ''}
+`;
+
+const ScFriendBox = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    margin: 5px 10px 10px 5px;
+    box-shadow: 5px 5px #00000044;
+    width: auto;
+    text-align: left;
+    color: #000000B5;
+    height auto;
+    cursor: pointer;
+    background-color: ${props => props.isSelected ? "#EF476F" :"#F0F0F0"};
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
 `;
 
 const ScProfilePicture = styled.img`
-    width: 30%;
+    width: auto;
     height: 100%;
 `;
 
@@ -38,10 +53,12 @@ class Friend extends Component {
 
     render() {
         return (
-            <ScFriend isSelected={this.props.selected} onClick={() => this.unselectOthers()}>
-                <ScProfilePicture src={logo} alt={"profile"}/>
-                <ScUserInfo>{this.props.friend.name}</ScUserInfo>
-            </ScFriend>
+            <ScFriendBox isSelected={this.props.selected} onClick={() => this.unselectOthers()}>
+                <ScFriend isSelected={this.props.selected} onClick={() => this.unselectOthers()}>
+                    <ScProfilePicture src={logo} alt={"profile"}/>
+                    <ScUserInfo>{this.props.friend.name}</ScUserInfo>
+                </ScFriend>
+            </ScFriendBox>
         );
     }
 }
