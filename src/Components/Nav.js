@@ -36,6 +36,7 @@ class Nav extends Component {
             <ScNav>
                Nav
                 <ScNavTop>
+                    <NavItem name={VIEWSTATES.HOME} viewState={VIEWSTATES.HOME} updateView={this.props.updateView} />
                     <NavItem name={VIEWSTATES.PROFILE} viewState={VIEWSTATES.PROFILE} updateView={this.props.updateView} />
                     <NavItem name={VIEWSTATES.PEEPS} viewState={VIEWSTATES.PEEPS} updateView={this.props.updateView} />
                     <NavItem name={VIEWSTATES.MEALS} viewState={VIEWSTATES.MEALS} updateView={this.props.updateView} />
