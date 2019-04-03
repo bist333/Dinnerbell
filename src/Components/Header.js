@@ -4,18 +4,17 @@ import MealTimer from "./Header/MealTimer";
 
 const ScHeader = styled.div`
     position: static;
-    height: 10vh;
-    border-style: solid;
-    border-width: 2px;
+    height: 8vh;
     margin-left: 20%;
     text-align: center;
+    background-color: #F8F8FF;
 `;
 
 class Header extends Component {
     render() {
         return (
             <ScHeader>
-                header
+                <br/>
                 <MealTimer time={this.props.time}/>
             </ScHeader>
         );

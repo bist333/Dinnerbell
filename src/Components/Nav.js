@@ -8,15 +8,16 @@ import PEEPSSTATES from "../Common/peepsStates";
 const ScNav = styled.div`
     float: left;
     position: static;
-    border-style: solid;
-    border-width: 2px;
     text-align: center;
     height: 100vh;
     width: 20%;
+    background-color: #F8F8FF;
+    padding: 0px 10px;
 `;
 const ScNavTop = styled.ul`
     padding-left: 0;
     display: flex;
+    
     flex-direction: column;
     list-style: none;
 `;
@@ -35,12 +36,12 @@ class Nav extends Component {
     render() {
         return (
             <ScNav>
-               Nav
                 <ScNavTop>
+                    <NavItem name={VIEWSTATES.HOME} viewState={VIEWSTATES.HOME} updateView={this.props.updateView} />
                     <NavItem name={VIEWSTATES.PROFILE} viewState={VIEWSTATES.PROFILE} updateView={this.props.updateView} />
                     <NavItem name={VIEWSTATES.PEEPS} viewState={VIEWSTATES.PEEPS} updateView={this.props.updateView} flavor={PEEPSSTATES.NORMAL}/>
                     <NavItem name={VIEWSTATES.MEALS} viewState={VIEWSTATES.MEALS} updateView={this.props.updateView} />
-                    <NavItem name={VIEWSTATES.PAYMENT} viewState={VIEWSTATES.PAYMENT} updateView={this.props.updateView} />
+                    <NavItem name={VIEWSTATES.PAYMENTS} viewState={VIEWSTATES.PAYMENTS} updateView={this.props.updateView} />
                 </ScNavTop>
                 <ScNavBottom>
                     <NavItem name={VIEWSTATES.INVITE} viewState={VIEWSTATES.PEEPS} updateView={this.props.updateView} flavor={PEEPSSTATES.ADDFRIEND} />

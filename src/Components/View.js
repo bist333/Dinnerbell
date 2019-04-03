@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import Payments from './Views/Payments/Payments';
 import Meals from './Views/Meals/Meals';
 import Peeps from './Views/Peeps/Peeps';
 import Profile from './Views/Profile/Profile';
+import Home from './Views/Home/Home';
 
 import VIEWSTATES from '../Common/viewStates';
 import PEEPSSTATES from "../Common/peepsStates";
@@ -18,14 +20,16 @@ class View extends Component {
         console.log('view');
         console.log(this.props.flavor);
         switch (this.props.viewState) {
-            case VIEWSTATES.HOME:
-                return <div>Home View</div>;
+            case VIEWSTATES.PAYMENTS:
+                return <Payments/>;
             case VIEWSTATES.MEALS:
                 return <Meals/>;
             case VIEWSTATES.PEEPS:
                 return <Peeps flavor={this.props.flavor}/>;
             case VIEWSTATES.PROFILE:
-                return <Profile/>
+                return <Profile/>;
+            default:
+                return <Home/>;
         }
     }
 
