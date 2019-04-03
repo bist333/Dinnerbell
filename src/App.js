@@ -51,7 +51,7 @@ class App extends Component {
         return (
             <ScApp>
                 <Nav updateView={this.updateView} />
-                <Header time={1553432663} />
+                <Header time={new Date(cookies.get('persisted_data').next_meal_time).getMilliseconds()} />
                 <View viewState={this.state.viewState} flavor={this.state.flavor} updateView={this.updateView}/>
             </ScApp>
         );

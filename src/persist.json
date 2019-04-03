@@ -1,10 +1,12 @@
 {
-  "some_key": "some_value",
-  "array": [
-    1,
-    "two"
+  "next_meal_time": "May 17, 2019 03:24:00",
+  "pending_meals": [
+    {"meal": "Salvatore's", "type": "takeout", "time": "May 17, 2019 03:23:00"},
+    {"meal": "Pita Pit", "type": "takeout", "time": "May 18, 2019 06:24:00"},
+    {"meal": "Rice and Beans", "type": "homecooked", "time": "May 19, 2019 06:30:00"}
   ],
-  "obj": {
-    "one": "two"
-  }
+  "pending_payments": [
+    {"meal": "Cheetos", "owed": 15.56, "time": "April 2, 2019 03:24:00"},
+    {"meal": "Crackers", "owed": 45.32,"time": "April 2, 2019 08:45:00"}
+  ]
 }

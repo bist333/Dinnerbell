@@ -6,11 +6,12 @@ export const ScStartMeal = styled.div`
     font-size: 24px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 5% 10%;
     justify-content: center;
 `;
 
-export const ScMealType = styled.div`
+/*export const ScMealType = styled.div`
     border: 1px solid;
     padding: 10px;
     width: 50%;
@@ -19,4 +20,18 @@ export const ScMealType = styled.div`
     &:hover{
     background-color: #950020;
     }
+`;*/
+
+export const ScMealType = styled.div`
+    text-align: center;
+    padding: 5%;
+    width: 25%;
+    height 30px;
+    border-style: solid;
+    cursor: pointer;
+    background-color: #EF476F;
+    font-size: 18px;
+    font-weight: bold;
+    color: #F8F8FF;
+    border-radius: 10px;
 `;
