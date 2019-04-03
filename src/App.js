@@ -31,12 +31,19 @@ class App extends Component {
         cookies.set('allergy', "Strawberries");
         cookies.set('favFood', "Calzones");
         cookies.set('nfavFood', "Cilantro, Radishes");
-        cookies.set('favRest', "Salvatore's")
+        cookies.set('favRest', "Salvatore's");
+
+        let friend1 = {name: 'Jim'};
+        let friend2 = {name: 'John'};
+        let friend3 = {name: 'James'};
+        let friends= [friend1,friend2,friend3];
+        cookies.set('friends', JSON.stringify(friends) );
     }
 
     updateView(newView, flavor) {
-        this.setState({viewState: newView});
-        flavor && this.setState({flavor: flavor})
+        console.log(flavor);
+        this.setState({viewState: newView, flavor:flavor});
+        //flavor && this.setState({flavor: flavor})
     }
 
 

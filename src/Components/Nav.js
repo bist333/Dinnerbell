@@ -43,7 +43,7 @@ class Nav extends Component {
                     <NavItem name={VIEWSTATES.PAYMENT} viewState={VIEWSTATES.PAYMENT} updateView={this.props.updateView} />
                 </ScNavTop>
                 <ScNavBottom>
-                    <NavItem name={VIEWSTATES.INVITE} viewState={VIEWSTATES.PEEPS} updateView={this.props.updateView} />
+                    <NavItem name={VIEWSTATES.INVITE} viewState={VIEWSTATES.PEEPS} updateView={this.props.updateView} flavor={PEEPSSTATES.ADDFRIEND} />
                     <NavItem name={VIEWSTATES.LOGOUT} viewState={VIEWSTATES.LOGOUT} updateView={this.props.updateView} />
                 </ScNavBottom>
             </ScNav>

@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import Friend from "./Friend";
 import Group from "./Group";
 
+import Cookies from 'universal-cookie';
+
+const cookies = new Cookies();
 
 const ScUserColumn = styled.div`
     width: 30%;
@@ -48,10 +51,7 @@ class UserColumn extends Component {
     }
 
     getFriends(){
-        let friend1 = {name: 'Jim'};
-        let friend2 = {name: 'John'};
-        let friend3 = {name: 'James'};
-        return [friend1,friend2,friend3];
+        return cookies.get('friends');
     }
 
     getGroups() {
@@ -69,9 +69,6 @@ class UserColumn extends Component {
             let elements = [];
             friends.forEach(friend => {
                 elements.push(<Friend friend={friend} />);
-                console.log(this.state.selected === friend.name);
-                console.log(this.state.selected);
-                console.log(friend.name);
             });
             this.setState({friends: elements})
         }
@@ -87,9 +84,7 @@ class UserColumn extends Component {
     }
 
     unselectOthers(friend){
-        console.log(friend);
         this.setState({selected: friend}, () => this.renderGroups());
-        console.log('called');
     }
 
     render() {

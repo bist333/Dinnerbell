@@ -39,7 +39,7 @@ const ScGroupMenu = styled.div`
 class Peeps extends Component {
     constructor(props) {
         super(props);
-        this.state = {view: null};
+        this.state = {view: undefined};
 
         this.changeToAddFriend = this.changeToAddFriend.bind(this);
         this.changeToNewGroup = this.changeToNewGroup.bind(this);
@@ -48,7 +48,7 @@ class Peeps extends Component {
     }
 
     componentWillMount(){
-        this.setState({view: null, update: true})
+        this.setState({update: true})
     }
 
     selectView() {
@@ -68,6 +68,7 @@ class Peeps extends Component {
                 break;
             case PEEPSTATES.NEWGROUP:
                 this.setState({renderedView: <NewGroup/>});
+
                 break;
             case PEEPSTATES.GROUPMENU:
                 this.setState({renderedView:
@@ -111,7 +112,7 @@ class Peeps extends Component {
     }
 
     render() {
-
+        console.log(this.props.flavor);
         if (this.props.flavor && !this.state.view){
             this.setState({view: this.props.flavor})
         }

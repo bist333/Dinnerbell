@@ -30,8 +30,10 @@ class Friend extends Component {
     }
 
     unselectOthers(){
-        this.props.unselectOthers(this.props.friend.name);
-        this.setState({isSelected: true});
+        if (this.props.unselectOthers) {
+            this.props.unselectOthers(this.props.friend.name);
+            this.setState({isSelected: true});
+        }
     }
 
     render() {
