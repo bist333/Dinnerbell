@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Meals from './Views/Meals/Meals';
 import Peeps from './Views/Peeps/Peeps';
 import Profile from './Views/Profile/Profile';
+import StartMeal from './Views/StartMeal/StartMeal';
 
 import VIEWSTATES from '../Common/viewStates';
 
@@ -18,7 +19,7 @@ class View extends Component {
             case VIEWSTATES.HOME:
                 return <div>Home View</div>;
             case VIEWSTATES.MEALS:
-                return <Meals/>;
+                return <StartMeal/>;
             case VIEWSTATES.PEEPS:
                 return <Peeps/>;
             case VIEWSTATES.PROFILE:
