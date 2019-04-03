@@ -5,8 +5,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ##Running the Project
 To run the prototype locally:
 
-1. Download the project file to a new directory
-2. Run the <FILETYPE> <FILENAME>
+1. Download the project files to a new directory
+2. Run the FILENAME.bat file
 3. The project is now running locally on port 3000, to view it open a browser and navigate to [http://localhost:3000](http://localhost:3000)
 
 ## Available Scripts
