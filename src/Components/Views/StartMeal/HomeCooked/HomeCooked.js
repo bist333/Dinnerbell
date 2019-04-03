@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import ScStartMeal from './Shared.js'
+import ScMealType from './Shared.js'
+
 
 const ScHomeCooked = styled.div`
     text-align: center;
@@ -10,7 +13,7 @@ const ScHomeCooked = styled.div`
 class HomeCooked extends Component {
     render() {
         return (
-            <ScHomeCooked>
+            <ScStartMeal>
                 We want a home cooked meal!
             </ScHomeCooked>
         );

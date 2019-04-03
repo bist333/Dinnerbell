@@ -5,7 +5,11 @@ export const VIEWSTATES = {
     PEEPS: 'peeps',
     PROFILE: 'profile',
     LOGOUT: 'logout',
-    INVITE: 'Invite a Friend'
+    INVITE: 'Invite a Friend',
+    STARTMEAL: 'Start a Meal',
+    DELIVERY: 'Delivery',
+    GOOUT: 'Delivery',
+    HOMECOOKED: 'HomeCooked'
 
 };
 

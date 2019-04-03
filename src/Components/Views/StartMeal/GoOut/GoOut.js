@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import ScStartMeal from './Shared.js'
+import ScMealType from './Shared.js'
 
 const ScGoOut = styled.div`
     text-align: center;
