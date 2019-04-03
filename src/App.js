@@ -27,8 +27,9 @@ class App extends Component {
     }
 
 
-    updateView(newView) {
+    updateView(newView, flavor) {
         this.setState({viewState: newView});
+        flavor && this.setState({flavor: flavor})
     }
 
 
@@ -37,7 +38,7 @@ class App extends Component {
             <ScApp>
                 <Nav updateView={this.updateView} />
                 <Header time={1553432663} />
-                <View viewState={this.state.viewState}/>
+                <View viewState={this.state.viewState} flavor={this.state.flavor}/>
             </ScApp>
         );
     }

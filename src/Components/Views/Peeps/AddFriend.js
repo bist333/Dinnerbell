@@ -24,9 +24,8 @@ class AddFriend extends Component {
         :
             friends.push(<Friend name={'Steven Chofee'}/>);
         return(
-            <UserColumn title={'Find a new Friend!'} bottom={'Search'} friends={friends}>
+            <UserColumn title={'Find a new Friend!'} bottom={'Search'} friends={friends} />
 
-            </UserColumn>
         )
     }
 }

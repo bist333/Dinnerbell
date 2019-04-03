@@ -6,6 +6,7 @@ import Peeps from './Views/Peeps/Peeps';
 import Profile from './Views/Profile/Profile';
 
 import VIEWSTATES from '../Common/viewStates';
+import PEEPSSTATES from "../Common/peepsStates";
 
 const ScApp = styled.div`
     text-align: center;
@@ -20,7 +21,7 @@ class View extends Component {
             case VIEWSTATES.MEALS:
                 return <Meals/>;
             case VIEWSTATES.PEEPS:
-                return <Peeps/>;
+                return <Peeps flavor={this.props.flavor}/>;
             case VIEWSTATES.PROFILE:
                 return <Profile/>
         }

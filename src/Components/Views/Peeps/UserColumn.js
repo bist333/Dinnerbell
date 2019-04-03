@@ -81,14 +81,14 @@ class UserColumn extends Component {
         let groups = this.getGroups();
         let elements = [];
         groups.forEach(group => {
-            elements.push(<Group group={group}/>);
+            elements.push(<Group group={group} groupMenu={this.props.groupMenu} unselectOthers={this.unselectOthers} selected={this.state.selected === group.name}/>);
         });
         this.setState({groups: elements})
     }
 
     unselectOthers(friend){
         console.log(friend);
-        this.setState({selected: friend}, () => this.renderFriends());
+        this.setState({selected: friend}, () => this.renderGroups());
         console.log('called');
     }
 

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import NavItem from "./Nav/NavItem";
 
 import VIEWSTATES from '../Common/viewStates';
+import PEEPSSTATES from "../Common/peepsStates";
 
 const ScNav = styled.div`
     float: left;
@@ -37,7 +38,7 @@ class Nav extends Component {
                Nav
                 <ScNavTop>
                     <NavItem name={VIEWSTATES.PROFILE} viewState={VIEWSTATES.PROFILE} updateView={this.props.updateView} />
-                    <NavItem name={VIEWSTATES.PEEPS} viewState={VIEWSTATES.PEEPS} updateView={this.props.updateView} />
+                    <NavItem name={VIEWSTATES.PEEPS} viewState={VIEWSTATES.PEEPS} updateView={this.props.updateView} flavor={PEEPSSTATES.NORMAL}/>
                     <NavItem name={VIEWSTATES.MEALS} viewState={VIEWSTATES.MEALS} updateView={this.props.updateView} />
                     <NavItem name={VIEWSTATES.PAYMENT} viewState={VIEWSTATES.PAYMENT} updateView={this.props.updateView} />
                 </ScNavTop>

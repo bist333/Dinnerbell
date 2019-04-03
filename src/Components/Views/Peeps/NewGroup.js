@@ -14,4 +14,4 @@ export default NewGroup;
 
 
 
-unselectOthers={this.unselectOthers} selected={this.state.selected === friend.name}
+//unselectOthers={this.unselectOthers} selected={this.state.selected === friend.name}

@@ -8,6 +8,8 @@ const ScGroup = styled.div`
     font-size: 14px;
     display: flex;
     padding-bottom: 12px;
+    border: ${props => props.isSelected ?
+    'border-color: #9ecaed; box-shadow: 0 0 10px #9ecaed;' : ''}
 `;
 
 const ScProfilePicture = styled.img`
@@ -22,9 +24,21 @@ const ScGroupInfo = styled.span`
 
 class Group extends Component {
 
+    constructor(props){
+        super(props);
+
+        this.state={selected: false};
+    }
+
+    unselectOthers(){
+        this.props.groupMenu();
+        this.props.unselectOthers(this.props.group.name);
+        this.setState({isSelected: true});
+    }
+
     render() {
         return (
-            <ScGroup>
+            <ScGroup isSelected={this.props.selected} onClick={() => this.unselectOthers()}>
                 <ScProfilePicture src={logo} alt={"profile"}/>
                 <ScGroupInfo>
                     {this.props.group.name}
