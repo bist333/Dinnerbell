@@ -18,7 +18,7 @@ const ScPeeps = styled.div`
     font-size: 24px;
     display: flex;
     padding: 5% 10%;
-    justify-content: space-between;
+    justify-content: space-around;
 `;
 
 const ScButton = styled.div`
