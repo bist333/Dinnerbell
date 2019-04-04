@@ -55,6 +55,7 @@ class UserColumn extends Component {
         this.state = {friends: [], groups: []};
 
         this.unselectOthers = this.unselectOthers.bind(this);
+        this.unselectOtherF = this.unselectOtherF.bind(this);
     }
 
     componentWillMount(){
@@ -73,44 +74,53 @@ class UserColumn extends Component {
     }
 
     getGroups() {
-        let group1 = {name: 'The Boys', members: ['Jim', 'John']};
-        let group2 = {name: 'With James', members: ['Jim', 'John', 'James']};
-        return [group1, group2];
+        return cookies.get('groups');
     }
 
     renderFriends() {
+        let friends;
         if (this.props.friends) {
-            this.setState({friends: this.props.friends})
+            this.setState({propfriends: this.props.friends});
+            friends = this.props.friends;
         }
         else {
-            let friends = this.getFriends();
+            friends = this.getFriends();
+        }
             let elements = [];
             friends.forEach(friend => {
-                elements.push(<Friend friend={friend} />);
+                elements.push(<Friend friend={friend} unselectOtherF={this.unselectOtherF} unselectOthers={this.unselectOtherF} select={this.props.newGroupSelect} isSelected={this.state.selectedF === friend.name}/>);
             });
             this.setState({friends: elements})
         }
+
+    unselectOtherF(friend){
+        this.setState({selectedF: friend}, () => this.renderFriends());
+        this.props.newGroupSelect && this.props.newGroupSelect(friend);
     }
 
     renderGroups() {
-        let groups = this.getGroups();
+
+        let groups = this.props.groups || this.getGroups();
         let elements = [];
         groups.forEach(group => {
-            elements.push(<Group group={group} groupMenu={this.props.groupMenu} unselectOthers={this.unselectOthers} selected={this.state.selected === group.name}/>);
+            elements.push(<Group group={group} groupMenu={this.props.groupMenu || null} unselectOthers={this.unselectOthers} selected={this.state.selected === group.name}/>);
         });
         this.setState({groups: elements})
     }
 
-    unselectOthers(friend){
-        this.setState({selected: friend}, () => this.renderGroups());
+    unselectOthers(group){
+        this.setState({selected: group}, () => this.renderGroups());
     }
 
     render() {
+        if (this.props.friends && this.state.propfriends && this.props.friends !== this.state.propfriends){
+            this.renderFriends();
+        }
         return (
             <ScUserColumn>
                 <ScTopBox>{this.props.title}</ScTopBox>
                 {this.state.friends && this.props.id !== 'groups' && this.state.friends.map(friend => <div> {friend} </div>)}
-                {this.props.id === 'groups' ? this.state.groups.map(group => <div> {group} </div>) : ''}
+                {this.props.id === 'groups' || this.props.groups ? this.state.groups.map(group => <div> {group} </div>) : ''}
                 <ScBottomBox onClick={this.props.bottomonclick ? () => this.props.bottomonclick() : false}>{this.props.bottom}</ScBottomBox>
             </ScUserColumn>
         );

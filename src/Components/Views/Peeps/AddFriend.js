@@ -13,16 +13,12 @@ class AddFriend extends Component {
 
     render(){
         let friends = [];
-        !this.state.searchbar.includes('Steven') ?
-            friends = [
-                <Friend friend={{name: 'timmy'} }/>,
-                <Friend friend={{name: 'Bradley'}}/>,
-                <Friend friend={{name: 'megan'}}/>,
-                //<Friend name={'Bruce Banner'}/>,
-                //<Friend name={'Steven Chofee'}/>
-            ]
-        :
-            friends.push(<Friend name={'Steven Chofee'}/>);
+        friends.push({name: 'timmy'});
+        friends.push({name: 'Bradley'});
+        friends.push({name: 'megan'});
+        friends.push({name: 'Bruce Banner'});
+        friends.push({name: 'Steven Chofee'});
+
         return(
             <UserColumn title={'Find a new Friend!'} bottom={'Search'} friends={friends} />
 
