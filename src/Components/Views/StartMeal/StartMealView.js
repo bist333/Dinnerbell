@@ -17,11 +17,11 @@ class StartMealView extends Component {
     renderView() {
         switch (this.props.viewState) {
             case VIEWSTATES.DELIVERY:
-                return <Delivery/>;
+                return <Delivery name={VIEWSTATES.DELIVERY} viewState={VIEWSTATES.DELIVERY} updateView={this.props.updateView} />;
             case VIEWSTATES.GOOUT:
-                return <GoOut/>;
+                return <GoOut name={VIEWSTATES.GOOUT} viewState={VIEWSTATES.GOOUT} updateView={this.props.updateView} />;
             case VIEWSTATES.HOMECOOKED:
-                return <HomeCooked/>;
+                return <HomeCooked name={VIEWSTATES.HOMECOOKED} viewState={VIEWSTATES.HOMECOOKED} updateView={this.props.updateView} />;
             default:
                 return <StartMeal/>;
         }
