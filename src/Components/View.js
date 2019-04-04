@@ -19,8 +19,6 @@ const ScApp = styled.div`
 class View extends Component {
 
     renderView() {
-        console.log('view');
-        console.log(this.props.flavor);
         switch (this.props.viewState) {
             case VIEWSTATES.PAYMENTS:
                 return <Payments/>;

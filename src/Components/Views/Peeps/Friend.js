@@ -52,12 +52,13 @@ class Friend extends Component {
         if (this.props.unselectOthers) {
             this.props.unselectOthers(this.props.friend.name);
             this.setState({isSelected: true});
+            this.props.select && this.props.select(this.props.friend.name);
         }
     }
 
     render() {
         return (
-            <ScFriendBox isSelected={this.props.selected} onClick={() => this.unselectOthers()}>
+            <ScFriendBox isSelected={this.props.isSelected} onClick={() => this.unselectOthers()}>
                 <ScFriend isSelected={this.props.selected} onClick={() => this.unselectOthers()}>
                     <ScProfilePicture src={logo} alt={"profile"}/>
                     <ScUserInfo>{this.props.friend.name}</ScUserInfo>

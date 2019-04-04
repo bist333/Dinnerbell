@@ -38,10 +38,14 @@ class App extends Component {
         let friend3 = {name: 'James'};
         let friends= [friend1,friend2,friend3];
         cookies.set('friends', JSON.stringify(friends) );
+
+        let group1 = {name: 'The Boys', members: ['Jim', 'John']};
+        let group2 = {name: 'With James', members: ['Jim', 'John', 'James']};
+        let groups = [group1, group2];
+        cookies.set('groups', JSON.stringify(groups) );
     }
 
     updateView(newView, flavor) {
-        console.log(flavor);
         this.setState({viewState: newView, flavor:flavor});
         //flavor && this.setState({flavor: flavor})
     }

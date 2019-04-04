@@ -103,7 +103,7 @@ class Peeps extends Component {
                 });
                 break;
             case PEEPSTATES.NEWGROUP:
-                this.setState({renderedView: <NewGroup/>});
+                this.setState({renderedView: <NewGroup updateView={this.props.updateView}/>});
 
                 break;
             case PEEPSTATES.GROUPMENU:
@@ -149,7 +149,6 @@ class Peeps extends Component {
     }
 
     render() {
-        console.log(this.props.flavor);
         if (this.props.flavor && !this.state.view){
             this.setState({view: this.props.flavor})
         }
