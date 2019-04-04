@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import UserColumn from "./UserColumn";
 
 import Cookies from 'universal-cookie';
+import VIEWSTATES from "../../../Common/viewStates";
 
 const cookies = new Cookies();
 
@@ -14,6 +15,7 @@ class NewGroup extends Component {
 
         this.addFriend = this.addFriend.bind(this);
         this.onSelect = this.onSelect.bind(this);
+        this.saveNewGroup = this.saveNewGroup.bind(this);
     }
 
     onSelect(friend){
@@ -31,15 +33,33 @@ class NewGroup extends Component {
 
     saveNewGroup() {
         const group={};
-        for (i = 0; i < th)
+        let members=[];
+        for (let i = 0; i < this.state.friends2.length; i++){
+            members.push(this.state.friends2[i].name)
+        }
+        group.members = members;
+        group.name = 'New Group Name';
+        this.setState({group: cookies.get('groups')}, () => this.update(group) );
+
+    }
+
+    update(group){
+        let groups = this.state.group;
+        console.log('group:');
+        console.log(groups);
+        groups.push(group);
+        cookies.set('groups', JSON.stringify(groups));
+        this.props.updateView(VIEWSTATES.HOME);
+        //this.props.updateView(VIEWSTATES.PEEPS);
     }
 
     render(){
-        console.log(this.state);
+        console.log('cookies');
+        console.log(cookies.get('groups'));
         return(
             <React.Fragment>
                 <UserColumn friends={this.state.friends} title={'Friends'} bottom={'ADD'} bottomonclick={this.addFriend} newGroupSelect={this.onSelect}/>
-                <UserColumn title={'New Group Name'} bottom={'SAVE'} friends={this.state.friends2} bottomonclick={() => console.log('swaaaaaag')}/>
+                <UserColumn title={'New Group Name'} bottom={'SAVE'} friends={this.state.friends2} bottomonclick={this.saveNewGroup}/>
             </React.Fragment>
         )
     }

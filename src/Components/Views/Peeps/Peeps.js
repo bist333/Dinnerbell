@@ -103,7 +103,7 @@ class Peeps extends Component {
                 });
                 break;
             case PEEPSTATES.NEWGROUP:
-                this.setState({renderedView: <NewGroup/>});
+                this.setState({renderedView: <NewGroup updateView={this.props.updateView}/>});
 
                 break;
             case PEEPSTATES.GROUPMENU:
