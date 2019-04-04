@@ -49,6 +49,10 @@ const ScButton = styled.button`
     font-weight: bold;
     color: #F8F8FF;
     border-radius: 10px;
+    
+    &:hover {
+        background-color: #cc3f60;
+    }
 `;
 
 class Profile extends Component {
@@ -111,8 +115,8 @@ class Profile extends Component {
             return (
                 <ScProfile>
                     <form>
-                        <img src={Placeholder} width="30%" height="auto" />
-                        <p>Username: {cookies.get('username')}</p>
+                        <img src={Placeholder} width="20%" height="auto" />
+                        <p><strong>Username:</strong> {cookies.get('username')}</p>
                         <ScEditWrapper>
                             <ScInput type="text" name="allergy" placeholder="Allergies" value={this.state.allergy} onChange={this.handleAllergyChange}/>
                             <ScInput type="text" name="favFood" placeholder="Favorite Foods" value={this.state.favFood} onChange={this.handleFavFoodChange}/>
@@ -129,12 +133,12 @@ class Profile extends Component {
             return (
                 <ScProfile>
                     <div>
-                        <img src={Placeholder} width="30%" height="auto" />
-                        <p>Username: {cookies.get('username')}</p>
-                        <p>Allergies: {cookies.get('allergy')}</p>
-                        <p>Favorite Foods: {cookies.get('favFood')}</p>
-                        <p>Disliked Foods: {cookies.get('nfavFood')}</p>
-                        <p>Favorite Restauranut: {cookies.get('favRest')}</p>
+                        <img src={Placeholder} width="20%" height="auto" />
+                        <p><strong>Username:</strong> {cookies.get('username')}</p>
+                        <p><strong>Allergies:</strong> {cookies.get('allergy')}</p>
+                        <p><strong>Favorite Foods:</strong> {cookies.get('favFood')}</p>
+                        <p><strong>Disliked Foods:</strong> {cookies.get('nfavFood')}</p>
+                        <p><strong>Favorite Restaurant:</strong> {cookies.get('favRest')}</p>
                         <ScButton type = "button" onClick={this.handleEdit}>Edit</ScButton>
                     </div>
                 </ScProfile>    

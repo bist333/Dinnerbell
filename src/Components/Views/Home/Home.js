@@ -23,20 +23,10 @@ const ScMealButton = styled.button`
     font-weight: bold;
     color: #F8F8FF;
     border-radius: 10px;
-`;
-
-const ScNavItem = styled.li`
-    text-align: center;
-    padding: 10%;
-    border-style: solid;
-    border-width: 2px;
-    padding-bottom: 30px;
-    cursor: pointer;
-    background-color: #EF476F;
-    font-size: 18px;
-    font-weight: bold;
-    color: #F8F8FF;
-    border-radius: 10px;
+    
+    &:hover {
+        background-color: #cc3f60;
+    }
 `;
 
 class Home extends Component {

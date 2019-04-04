@@ -14,6 +14,10 @@ const ScNavItem = styled.li`
     font-weight: bold;
     color: #F8F8FF;
     border-radius: 10px;
+    
+    &:hover {
+        background-color: #cc3f60;
+    }
 `;
 
 
