@@ -24,9 +24,9 @@ class StartMealView extends Component {
             case VIEWSTATES.DELIVERY:
                 return <Delivery name={VIEWSTATES.DELIVERY} />;
             case VIEWSTATES.GOOUT:
-                return <GoOut name={VIEWSTATES.GOOUT} viewState={VIEWSTATES.GOOUT} updateView={this.props.updateView} />;
+                return <GoOut name={VIEWSTATES.GOOUT} />;
             case VIEWSTATES.HOMECOOKED:
-                return <HomeCooked name={VIEWSTATES.HOMECOOKED} viewState={VIEWSTATES.HOMECOOKED} updateView={this.props.updateView} />;
+                return <HomeCooked name={VIEWSTATES.HOMECOOKED} />;
             default:
                 return <StartMeal updateView={this.updateView}/>;
         }

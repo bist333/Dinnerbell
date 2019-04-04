@@ -11,11 +11,11 @@ const ScGoOut = styled.div`
     padding: 1%;
 `;
 
-const ScTimeBox = styled.ul`
+const ScTimeBox = styled.div`
     text-align: center;
     vertical-align: middle;
     box-shadow: 5px 5px #00000044;
-    padding: 1%;
+    margin-top: 3%;
     width: 25%;
     color: #000000B5;
     cursor: pointer;

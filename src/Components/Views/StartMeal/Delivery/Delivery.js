@@ -7,7 +7,6 @@ const ScDelivery = styled.div`
     padding: 5%;
 `;
 
-
 class Delivery extends Component {
     render() {
         return (
