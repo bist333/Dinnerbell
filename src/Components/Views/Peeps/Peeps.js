@@ -22,14 +22,49 @@ const ScPeeps = styled.div`
 `;
 
 const ScButton = styled.div`
-   border: 1px solid;
-   padding: 10px;
-   width: 80%;
-   margin: 10%;
-   
-   &:hover{
-   background-color: #950020;
-   }
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin: 5px 10px 10px 5px;
+    box-shadow: 5px 5px #00000044;
+    padding: 4%;
+    width: auto;
+    text-align: center;
+    color: #000000B5;
+    height auto;
+    cursor: pointer;
+    background-color: #F0F0F0;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    
+    &:hover {
+        background-color: #EF476F;
+    }
+`;
+
+const ScTopBox = styled.div`
+    border-radius: 10px 10px 0 0;
+    
+    width: 100%;
+    height: 20px;
+    background-color: #EF476F;
+    
+    font-size: 14px;
+    font-weight: bold;
+    color: #00000085;
+    
+    padding-bottom: 4px;
+`;
+
+const ScUserColumn = styled.div`
+    width: 30%;
+    text-align: center;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #EF476F;
+    border-radius: 15px;
 `;
 
 const ScGroupMenu = styled.div`
@@ -58,12 +93,12 @@ class Peeps extends Component {
                 this.setState({renderedView:
                     <React.Fragment>
                         <AddFriend/>
-                        <ScGroupMenu>
-                            Invite a friend who isnt on Dinnerbell yet!
+                        <ScUserColumn>
+                            <ScTopBox>Invite a friend who isnt on Dinnerbell yet!</ScTopBox>
                             <ScButton onClick={() => alert('Email sent to the email address you totally just provided us')}>Email</ScButton>
                             <ScButton onClick={() => alert('Message and data rates may apply')}>SMS</ScButton>
                             <ScButton onClick={() => alert('Carrier Pidgeon is on his way!')}>Carrier Pidgeon</ScButton>
-                        </ScGroupMenu>
+                        </ScUserColumn>
                     </React.Fragment>
                 });
                 break;
@@ -74,11 +109,12 @@ class Peeps extends Component {
             case PEEPSTATES.GROUPMENU:
                 this.setState({renderedView:
                     <React.Fragment>
-                        <ScGroupMenu>
+                        <ScUserColumn>
+                            <ScTopBox>Options</ScTopBox>
                             <ScButton onClick={() => this.props.updateView(VIEWSTATES.STARTMEAL)}>Start A Meal</ScButton>
                             <ScButton>Edit Group</ScButton>
                             <ScButton>Leave Group</ScButton>
-                        </ScGroupMenu>
+                        </ScUserColumn>
                         <UserColumn id= {'groups'} title= {'Your Groups'} bottom={'+ New Group'} bottomonclick={this.changeToNewGroup} groupMenu={this.changeToGroupMenu}/>
                     </React.Fragment>});
                 break;
