@@ -46,7 +46,6 @@ class App extends Component {
     }
 
     updateView(newView, flavor) {
-        console.log(flavor);
         this.setState({viewState: newView, flavor:flavor});
         //flavor && this.setState({flavor: flavor})
     }

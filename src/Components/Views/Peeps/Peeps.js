@@ -149,7 +149,6 @@ class Peeps extends Component {
     }
 
     render() {
-        console.log(this.props.flavor);
         if (this.props.flavor && !this.state.view){
             this.setState({view: this.props.flavor})
         }

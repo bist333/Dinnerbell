@@ -45,8 +45,6 @@ class NewGroup extends Component {
 
     update(group){
         let groups = this.state.group;
-        console.log('group:');
-        console.log(groups);
         groups.push(group);
         cookies.set('groups', JSON.stringify(groups));
         this.props.updateView(VIEWSTATES.HOME);
@@ -54,8 +52,6 @@ class NewGroup extends Component {
     }
 
     render(){
-        console.log('cookies');
-        console.log(cookies.get('groups'));
         return(
             <React.Fragment>
                 <UserColumn friends={this.state.friends} title={'Friends'} bottom={'ADD'} bottomonclick={this.addFriend} newGroupSelect={this.onSelect}/>
@@ -66,7 +62,3 @@ class NewGroup extends Component {
 }
 
 export default NewGroup;
-
-
-
-//unselectOthers={this.unselectOthers} selected={this.state.selected === friend.name}

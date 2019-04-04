@@ -60,7 +60,6 @@ class UserColumn extends Component {
 
     componentWillMount(){
             this.renderFriends();
-            console.log(this.props.bottomonclick);
     }
 
     componentDidMount(){
