@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
-import {ScStartMeal} from '../Shared.js'
+import GrubHub from './grubhub.png';
 
 const ScDelivery = styled.div`
     text-align: center;
@@ -12,7 +11,7 @@ class Delivery extends Component {
     render() {
         return (
             <ScDelivery>
-                We want to order delivery!
+                <img src={GrubHub} width="50%" height="auto" alt={'map'}/>
             </ScDelivery>
         );
     }
