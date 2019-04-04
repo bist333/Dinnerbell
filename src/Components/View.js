@@ -10,6 +10,7 @@ import Home from './Views/Home/Home';
 import VIEWSTATES from '../Common/viewStates';
 import PEEPSSTATES from "../Common/peepsStates";
 import StartMealView from "./Views/StartMeal/StartMealView";
+import Logout from "./Logout";
 
 const ScApp = styled.div`
     text-align: center;
@@ -31,6 +32,8 @@ class View extends Component {
                 return <Profile/>;
             case VIEWSTATES.STARTMEAL:
                 return <StartMealView/>;
+            case VIEWSTATES.LOGOUT:
+                return <Logout/>;
             default:
                 return <Home updateView={this.props.updateView}/>;
         }
