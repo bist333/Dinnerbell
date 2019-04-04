@@ -25,6 +25,10 @@ const ScFriendBox = styled.div`
     font-size: 18px;
     font-weight: bold;
     border-radius: 10px;
+    
+    &:hover {
+        background-color: #EF476F;
+    }
 `;
 
 const ScProfilePicture = styled.img`
