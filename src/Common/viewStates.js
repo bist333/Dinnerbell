@@ -8,7 +8,7 @@ export const VIEWSTATES = {
     INVITE: 'Invite a Friend',
     STARTMEAL: 'Start a Meal',
     DELIVERY: 'Delivery',
-    GOOUT: 'Delivery',
+    GOOUT: 'GoOut',
     HOMECOOKED: 'HomeCooked'
 
 };

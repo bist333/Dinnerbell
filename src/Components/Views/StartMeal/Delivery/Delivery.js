@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
-import {ScStartMeal} from '../Shared.js'
+import GrubHub from './grubhub.png';
 
 const ScDelivery = styled.div`
     text-align: center;
+    padding: 5%;
 `;
-
 
 class Delivery extends Component {
     render() {
         return (
             <ScDelivery>
-                We want to order delivery!
+                <a href="https://www.grubhub.com">
+                    <img src={GrubHub} width="60%" height="auto" alt={'grubhub'}/>
+                </a>
             </ScDelivery>
         );
     }

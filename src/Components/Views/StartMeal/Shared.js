@@ -34,4 +34,5 @@ export const ScMealType = styled.div`
     font-weight: bold;
     color: #F8F8FF;
     border-radius: 10px;
+    margin: 2.5%;
 `;
