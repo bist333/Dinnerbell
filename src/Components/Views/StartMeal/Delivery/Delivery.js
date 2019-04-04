@@ -4,6 +4,7 @@ import GrubHub from './grubhub.png';
 
 const ScDelivery = styled.div`
     text-align: center;
+    padding: 5%;
 `;
 
 
@@ -11,7 +12,9 @@ class Delivery extends Component {
     render() {
         return (
             <ScDelivery>
-                <img src={GrubHub} width="50%" height="auto" alt={'map'}/>
+                <a href="https://www.grubhub.com">
+                    <img src={GrubHub} width="60%" height="auto" alt={'grubhub'}/>
+                </a>
             </ScDelivery>
         );
     }
