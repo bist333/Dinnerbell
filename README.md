@@ -5,12 +5,20 @@ Dinnerbell is a prototype of a system designed to aid users in the scheduling, p
 
 Dinnerbell was developed using React JS and Node Package Manager. The prototype was designed to be run locally for demoing purposes.
 
-## Running the Project
-To run the prototype locally:
+## Prerequisites
+* This project assumes you have `node` and `npm` installed
+* [Node Installation Instructions](https://nodejs.org/en/download/)
 
+## Running the Project
+### Windows
 1. Download the project files to a new directory
-2. Run the FILENAME.bat file
-3. The project is now running locally on port 3000, to view it open a browser and navigate to [http://localhost:3000](http://localhost:3000)
+2. Run the run.bat file by either command line or by double clicking it
+3. Open a browser and navigate to [http://localhost:3000](http://localhost:3000)
+
+### Unix/Linux/MacOS
+1. Download the project files to a new directory
+2. Navigate to that directory and type `bash run.sh`
+3. Open a browser and navigate to [http://localhost:3000](http://localhost:3000)
 
 ## Other Available Scripts
 
