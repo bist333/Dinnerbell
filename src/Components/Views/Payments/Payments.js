@@ -43,7 +43,7 @@ class Payments extends Component {
                 {this.state.pendingPayments.map(meal => (
                     <ScPaymentBox>
                         {meal.meal}<br />
-                        {meal.owed}<br />
+                        ${meal.owed}<br />
                         {meal.time}
                     </ScPaymentBox>
                 ))}
