@@ -31,7 +31,7 @@ class View extends Component {
             case VIEWSTATES.PROFILE:
                 return <Profile/>;
             case VIEWSTATES.STARTMEAL:
-                return <StartMealView/>;
+                return <StartMealView />;
             case VIEWSTATES.LOGOUT:
                 return <Logout/>;
             default:
