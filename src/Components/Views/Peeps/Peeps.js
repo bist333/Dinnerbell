@@ -94,7 +94,7 @@ class Peeps extends Component {
                     <React.Fragment>
                         <AddFriend/>
                         <ScUserColumn>
-                            <ScTopBox>Invite a friend who isnt on Dinnerbell yet!</ScTopBox>
+                            <ScTopBox>Invite a friend</ScTopBox>
                             <ScButton onClick={() => alert('Email sent to the email address you totally just provided us')}>Email</ScButton>
                             <ScButton onClick={() => alert('Message and data rates may apply')}>SMS</ScButton>
                             <ScButton onClick={() => alert('Carrier Pidgeon is on his way!')}>Carrier Pidgeon</ScButton>
