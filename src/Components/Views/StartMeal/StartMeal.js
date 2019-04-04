@@ -5,6 +5,7 @@ import VIEWSTATES from "../../../Common/viewStates";
 
 
 class StartMeal extends Component {
+
     render() {
         return (
             <ScStartMeal>
