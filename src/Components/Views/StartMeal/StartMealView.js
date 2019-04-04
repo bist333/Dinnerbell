@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 
 import StartMeal from "./StartMeal";
 import Delivery from './Delivery/Delivery.js';
@@ -7,32 +6,30 @@ import GoOut from './GoOut/GoOut.js';
 import HomeCooked from './HomeCooked/HomeCooked.js';
 import VIEWSTATES from "../../../Common/viewStates";
 
-
-const ScApp = styled.div`
-    text-align: center;
-`;
-
 class StartMealView extends Component {
+    constructor(props){
+        super(props);
 
-    renderView() {
-        switch (this.props.viewState) {
-            case VIEWSTATES.DELIVERY:
-                return <Delivery/>;
-            case VIEWSTATES.GOOUT:
-                return <GoOut/>;
-            case VIEWSTATES.HOMECOOKED:
-                return <HomeCooked/>;
-            default:
-                return <StartMeal/>;
-        }
+        this.state={};
+
+        this.updateView = this.updateView.bind(this);
+    };
+
+    updateView(newView) {
+        this.setState({viewState: newView});
     }
 
     render() {
-        return (
-            <ScApp>
-                {this.renderView()}
-            </ScApp>
-        );
+        switch (this.state.viewState) {
+            case VIEWSTATES.DELIVERY:
+                return <Delivery name={VIEWSTATES.DELIVERY} />;
+            case VIEWSTATES.GOOUT:
+                return <GoOut name={VIEWSTATES.GOOUT} />;
+            case VIEWSTATES.HOMECOOKED:
+                return <HomeCooked name={VIEWSTATES.HOMECOOKED} />;
+            default:
+                return <StartMeal updateView={this.updateView}/>;
+        }
     }
 }
 
